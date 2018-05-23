@@ -1,0 +1,12 @@
+.form-container {
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* .row {
+  display: flex;
+  flex-direction: column;
+
+} */
+

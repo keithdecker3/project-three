@@ -6,5 +6,8 @@ module.exports = {
   },
   getOne(account) {
     return knex('account').where('account', account).first()
+  },
+  create(account) {
+    return knex('account').insert(account, '*')
   }
 }
