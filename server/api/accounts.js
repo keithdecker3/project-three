@@ -35,9 +35,23 @@ router.get('/:account',  (req, res) => {
 })
 
 router.post('/', (req, res, next) => {
-  queries.create(req.body).then (accounts => {
+  queries.create(req.body).then(accounts => {
     res.json(accounts[0])
   })
+})
+
+router.put('/:id', (req,res,next) => {
+  queries.update(req.params.id, req.body).then(accounts => {
+  res.json(accounts[0])
+  })
+})
+
+router.delete('/:id', (req, res) => {
+  queries.delete(req.params.id).then(() =>
+    res.json({
+    deleted:true
+    })
+  )
 })
 
 module.exports = router

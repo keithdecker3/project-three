@@ -9,5 +9,11 @@ module.exports = {
   },
   create(account) {
     return knex('account').insert(account, '*')
+  },
+  update(id, account) {
+    return knex('account').where('id', id).update(account, '*')
+  },
+  delete(id) {
+    return knex('account').where('id', id).del()
   }
 }

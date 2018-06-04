@@ -10,3 +10,16 @@
 
 } */
 
+#account-select {
+  max-width: 400px;
+}
+
+#account-select-container {
+  display: flex;
+  flex-direction: row;
+}
+
+#add-account-icon {
+  margin-left: 10px;
+}
+

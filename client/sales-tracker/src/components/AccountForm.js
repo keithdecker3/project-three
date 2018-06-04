@@ -34,10 +34,22 @@ formSubmit = (event) => {
   console.log(JSON.stringify(postData))
   fetch(url, {
     method: 'POST',
-    body: JSON.stringify(postData),
     headers: {
-      'content-type': 'application json'
-    }
+      'content-type': 'application/json'
+    },
+    body: JSON.stringify(postData),
+  })
+  .then(response => response.json())
+  this.setState({
+    account: '',
+    supplierRep: '',
+    distributorRep: '',
+    buyer: '',
+    streetAddress: '',
+    city: '',
+    state: '',
+    zipCode: '',
+    accountType: ''
   })
 }
 
