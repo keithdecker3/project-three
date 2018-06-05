@@ -22,7 +22,7 @@ handleChange = (event) => {
 
 formSubmit = (event) => {
   event.preventDefault()
-  const url = 'http://localhost:3000/api/v1/accounts'
+  const url = 'https://beer-rep-tracker.herokuapp.com/api/v1/accounts'
   const postData = {
     account: this.state.account,
     supplier_rep: this.state.supplierRep,
