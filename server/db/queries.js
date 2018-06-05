@@ -17,3 +17,4 @@ module.exports = {
     return knex('account').where('id', id).del()
   }
 }
+

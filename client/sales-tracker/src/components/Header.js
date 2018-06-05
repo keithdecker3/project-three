@@ -8,7 +8,7 @@ class Header extends React.Component {
       <Navbar brand='logo' right>
         <NavItem onClick={() => console.log('test click')}>Select Account</NavItem>
         <NavItem href='components.html'>Add Account</NavItem>
-      </Navbar>      
+      </Navbar>
     ) 
   }
 }
