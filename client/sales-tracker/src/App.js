@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 
-import AccountForm from './components/AccountForm'
-import NotesForm from './components/NotesForm'
+
 import Header from './components/Header'
 import AccountSelect from './components/AccountSelect'
 
@@ -22,8 +21,7 @@ class App extends Component {
       <div className="App">
         <Header />
         <AccountSelect accounts={this.state.accounts} />
-        <AccountForm />
-        <NotesForm />
+
       </div>
     )
   }
