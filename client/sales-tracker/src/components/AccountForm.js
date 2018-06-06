@@ -15,43 +15,43 @@ class AccountForm extends React.Component {
     accountType: ''
   }
 
-handleChange = (event) => {
-  const name = event.target.name
-  this.setState({[name]: event.target.value})
-}
-
-formSubmit = (event) => {
-  event.preventDefault()
-  const url = 'https://beer-rep-tracker.herokuapp.com/api/v1/accounts'
-  const postData = {
-    account: this.state.account,
-    supplier_rep: this.state.supplierRep,
-    distributor_rep: this.state.distributorRep,
-    buyer: this.state.buyer,
-    address: `${this.state.streetAddress}, ${this.state.city}, ${this.state.state} ${this.state.zipCode}`,
-    account_type: this.state.accountType
+  handleChange = (event) => {
+    const name = event.target.name
+    this.setState({[name]: event.target.value})
   }
-  // console.log(JSON.stringify(postData))
-  fetch(url, {
-    method: 'POST',
-    headers: {
-      'content-type': 'application/json'
-    },
-    body: JSON.stringify(postData),
-  })
-  .then(response => response.json())
-  this.setState({
-    account: '',
-    supplierRep: '',
-    distributorRep: '',
-    buyer: '',
-    streetAddress: '',
-    city: '',
-    state: '',
-    zipCode: '',
-    accountType: ''
-  })
-}
+
+  formSubmit = (event) => {
+    event.preventDefault()
+    const url = 'https://beer-rep-tracker.herokuapp.com/api/v1/accounts'
+    const postData = {
+      account: this.state.account,
+      supplier_rep: this.state.supplierRep,
+      distributor_rep: this.state.distributorRep,
+      buyer: this.state.buyer,
+      address: `${this.state.streetAddress}, ${this.state.city}, ${this.state.state} ${this.state.zipCode}`,
+      account_type: this.state.accountType
+    }
+    // console.log(JSON.stringify(postData))
+    fetch(url, {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify(postData),
+    })
+    .then(response => response.json())
+    this.setState({
+      account: '',
+      supplierRep: '',
+      distributorRep: '',
+      buyer: '',
+      streetAddress: '',
+      city: '',
+      state: '',
+      zipCode: '',
+      accountType: ''
+    })
+  }
 
 
   render() {
