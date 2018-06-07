@@ -4,6 +4,8 @@ import {Row, Input, Button} from 'react-materialize'
 import Geocode from "react-geocode"
 import AccountMap from './AccountMap'
 
+require('dotenv').config()
+
 class NotesForm extends React.Component {
   state = {
     date: '',
@@ -24,7 +26,7 @@ class NotesForm extends React.Component {
 
   formSubmit = (event) => {
     event.preventDefault()
-    // console.log(this.state)
+    const url = 'http://localhost:3000/api/v1/notes'
     const postData = {
       account: this.props.account,
       date: this.state.date,
@@ -32,15 +34,29 @@ class NotesForm extends React.Component {
       beer: this.state.beer,
       package_type: this.state.packageType,
       quantity: this.state.quantity,
-      mapAddress: ''
     }
     console.log(postData)
+    fetch(url, {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify(postData),
+    })
+    .then(response => response.json())
+    this.setState({
+      date: '',
+      notes: '',
+      beer: '',
+      packageType: '',
+      quantity: ''
+    })
   }
 
 
   geoCode = () => {
     this.setState({showMap: false})
-    Geocode.setApiKey("AIzaSyC30rolA60qVAaqy9WFtv2rRenhlWGIh_k")
+    Geocode.setApiKey(process.env.MAP_KEY)
     Geocode.enableDebug()
     fetch(`https://beer-rep-tracker.herokuapp.com/api/v1/accounts/${this.props.account}`)
     .then(response => response.json())
