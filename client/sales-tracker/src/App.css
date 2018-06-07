@@ -4,12 +4,6 @@
   flex-direction: column;
 }
 
-/* .row {
-  display: flex;
-  flex-direction: column;
-
-} */
-
 #account-select {
   max-width: 400px;
 }
@@ -21,5 +15,15 @@
 
 #add-account-icon {
   margin-left: 10px;
+}
+
+.leaflet-container {
+  height: 500px;
+  width: 500px;
+}
+
+#select-container {
+  display: flex; 
+  justify-content: center;
 }
 

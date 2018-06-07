@@ -3,6 +3,8 @@ import React from 'react'
 import {Navbar, NavItem} from 'react-materialize'
 
 import AccountSelect from './AccountSelect'
+import AccountMap from './AccountMap'
+
 
 class Header extends React.Component {
   state = {
@@ -22,7 +24,12 @@ class Header extends React.Component {
           <NavItem onClick={() => console.log('test click')}>Add Notes</NavItem>
           <NavItem href='components.html'>View Notes</NavItem>
         </Navbar>
-        <AccountSelect accounts={this.state.accounts} />
+        <div  id='select-container'>
+          <AccountSelect accounts={this.state.accounts} />
+        </div>
+        <AccountMap />
+
+        
       </div>
     ) 
   }
