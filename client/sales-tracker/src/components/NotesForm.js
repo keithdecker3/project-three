@@ -31,17 +31,25 @@ class NotesForm extends React.Component {
       notes: this.state.notes,
       beer: this.state.beer,
       package_type: this.state.packageType,
-      quantity: this.state.quantity
+      quantity: this.state.quantity,
+      mapAddress: ''
     }
     console.log(postData)
   }
 
-  
 
   geoCode = () => {
     Geocode.setApiKey("AIzaSyC30rolA60qVAaqy9WFtv2rRenhlWGIh_k")
     Geocode.enableDebug()
-    Geocode.fromAddress("5244 ilex way dayton md").then(
+    fetch(`https://beer-rep-tracker.herokuapp.com/api/v1/accounts/${this.props.account}`)
+    .then(response => response.json())
+    .then(response => {
+      this.setState({mapAddress: response.address})
+    })
+    // .then(console.log(this.state.mapAddress))
+    .then(response => 
+      Geocode.fromAddress(this.state.mapAddress)
+    .then(
       response => {
         const { lat, lng } = response.results[0].geometry.location
         // console.log(lat, lng)
@@ -55,7 +63,7 @@ class NotesForm extends React.Component {
       error => {
         console.error(error)
       }
-    )
+    )) 
   }
 
   render() {
