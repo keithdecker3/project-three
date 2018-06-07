@@ -2,8 +2,9 @@ import React from 'react'
 
 import {Navbar, NavItem} from 'react-materialize'
 
+
 import AccountSelect from './AccountSelect'
-import AccountMap from './AccountMap'
+
 
 
 class Header extends React.Component {
@@ -26,10 +27,7 @@ class Header extends React.Component {
         </Navbar>
         <div  id='select-container'>
           <AccountSelect accounts={this.state.accounts} />
-        </div>
-        <AccountMap />
-
-        
+        </div>       
       </div>
     ) 
   }

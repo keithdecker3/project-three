@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './App.css';
-import AccountMap from './components/AccountMap'
 
 import Header from './components/Header'
 

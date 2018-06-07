@@ -3,8 +3,8 @@ import { Map, TileLayer, Marker, Popup } from 'react-leaflet'
 
 class AccountMap extends React.Component {
   state = {
-    lat: 51.505,
-    lng: -0.09,
+    lat: this.props.lat,
+    lng: this.props.lng,
   }
 
   render() {
