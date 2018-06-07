@@ -21,7 +21,7 @@ class Header extends React.Component {
   render() {
     return (
       <div>
-        <Navbar brand='logo' right>
+        <Navbar brand='Sales Tracker' right>
           <NavItem onClick={() => console.log('test click')}>Add Notes</NavItem>
           <NavItem href='components.html'>View Notes</NavItem>
         </Navbar>
