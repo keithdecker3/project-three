@@ -10,6 +10,7 @@ class AccountMap extends React.Component {
   render() {
     const position = [this.state.lat, this.state.lng]
     return (
+      <div id='map-container'>
         <Map center={position} zoom={17}>
           <TileLayer
             attribution="&amp;copy <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
@@ -20,6 +21,7 @@ class AccountMap extends React.Component {
             </Popup>
           </Marker>
         </Map>
+      </div>
     )
   }
 }

@@ -31,7 +31,6 @@ class AccountForm extends React.Component {
       address: `${this.state.streetAddress}, ${this.state.city}, ${this.state.state} ${this.state.zipCode}`,
       account_type: this.state.accountType
     }
-    // console.log(JSON.stringify(postData))
     fetch(url, {
       method: 'POST',
       headers: {

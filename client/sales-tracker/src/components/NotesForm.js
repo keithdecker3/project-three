@@ -85,6 +85,7 @@ class NotesForm extends React.Component {
   render() {
     return (
       <div className='form-container'>
+        <h3>Add Notes</h3>
         <form onSubmit={this.formSubmit} id='notes-form'>
           <div>
             <Row>
@@ -101,8 +102,8 @@ class NotesForm extends React.Component {
             </Row>  
           </div>
           <div>  
-            <Button waves='light' type='submit' form='notes-form'>Submit</Button> 
-            <Button waves='light' type='submit' form='account-form' onClick={this.geoCode}>View Map</Button> 
+            <Button id='note-submit' waves='light' type='submit' form='notes-form'>Submit</Button> 
+            <Button id='view-map' waves='light' type='submit' form='account-form' onClick={this.geoCode}>View Map</Button> 
           </div> 
           { this.state.showMap ? <AccountMap lat={this.state.lat} lng={this.state.lng} /> : '' }
         </form>  

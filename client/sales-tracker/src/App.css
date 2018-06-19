@@ -2,6 +2,7 @@
   max-width: 500px;
   display: flex;
   flex-direction: column;
+  margin-top: 50px;
 }
 
 #account-select {
@@ -25,5 +26,30 @@
 #select-container {
   display: flex; 
   justify-content: center;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+#add-account-button {
+  margin-left: 10px;
+}
+
+#map-container {
+  margin-top: 50px;
+}
+
+#view-map {
+  margin-left: 20px;
+}
+
+h2 {
+  font-size: 25px;
+}
+
+.notes-container {
+  margin-top: 50px;
+  margin-left: 20px;
 }
 

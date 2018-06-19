@@ -4,12 +4,15 @@ import {Navbar, NavItem} from 'react-materialize'
 
 
 import AccountSelect from './AccountSelect'
+import ViewNotes from './ViewNotes'
 
 
 
 class Header extends React.Component {
   state = {
-    accounts: []
+    accounts: [],
+    showAccountSelect: true,
+    showViewNotes: false,
   }
 
   componentDidMount() {
@@ -18,16 +21,29 @@ class Header extends React.Component {
     .then(data => this.setState({accounts: data}))
   }
 
+  showAccountSelect = () => {
+    this.setState({
+      showAccountSelect: true,
+      showViewNotes: false
+    })
+  }
+
+  showViewNotes = () => {
+    this.setState({
+      showAccountSelect: false,
+      showViewNotes: true
+    })
+  }
+
   render() {
     return (
       <div>
         <Navbar brand='Sales Tracker' right>
-          <NavItem onClick={() => console.log('test click')}>Add Notes</NavItem>
-          <NavItem href='components.html'>View Notes</NavItem>
+          <NavItem onClick={this.showAccountSelect}>Add Notes</NavItem>
+          <NavItem onClick={this.showViewNotes}>View Notes</NavItem>
         </Navbar>
-        <div  id='select-container'>
-          <AccountSelect accounts={this.state.accounts} />
-        </div>       
+        { this.state.showAccountSelect ? <div  id='select-container'><AccountSelect accounts={this.state.accounts} /></div> : '' }
+        { this.state.showViewNotes ? <ViewNotes /> : '' }
       </div>
     ) 
   }
