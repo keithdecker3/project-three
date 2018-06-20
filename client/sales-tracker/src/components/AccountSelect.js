@@ -56,7 +56,7 @@ class AccountSelect extends React.Component {
               return (<option>{account.account}</option>)
             })}
           </Input>
-          <Button id='add-account-button' floating medium className='blue' waves='light' icon='add' onClick={this.addAccount} />
+          <Button id='add-account-button' floating medium className='blue' waves='light' onClick={this.addAccount} > + </Button>
           <Button id='edit-account-button' floating medium className='red' waves='light' onClick={this.editAccount}>edit</Button>
         </div>
         <Button waves='light' type='submit' form='account-form' onClick={this.handleSelect}>Select</Button>
