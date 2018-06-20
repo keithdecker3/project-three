@@ -1,0 +1,21 @@
+describe('Tests that functionality of the app is working', () => {
+  it('should be able to navigate to and populate notes', () => {
+    cy.visit('/')
+    cy.get('.right > :nth-child(2) > a').should('have.text', 'View Notes')
+    cy.get('.right > :nth-child(2) > a').click()
+    cy.get('.App > :nth-child(1) > :nth-child(2)').children().should('have.length', 5)
+  })
+  it('should be able to add an account', () => {
+    cy.visit('/')
+    cy.get('#add-account-button').click()
+    cy.get('#input_1').type('test')
+    cy.get('#input_2').type('test')
+    cy.get('#input_3').type('test')
+    cy.get('#input_4').type('test')
+    cy.get('#input_5').type('test')
+    cy.get('#input_6').type('test')
+    cy.get('#input_7').type('test')
+    cy.get('#input_8').type('test')
+    cy.get(':nth-child(10) > .btn').click()
+  })
+})
