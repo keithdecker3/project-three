@@ -21,14 +21,14 @@ https://github.com/keithdecker3/project-three
 https://beer-rep-tracker.herokuapp.com/
 
 ### **Built With**
-React.js
-Express.js
-Knex
-Postgresql
-React Materialize
-React Geocode
-React Leaflet
-Cypress
+- React.js
+- Express.js
+- Knex
+- Postgresql
+- React Materialize
+- React Geocode
+- React Leaflet
+- Cypress
 
 ### **Author**
 Keith Decker
